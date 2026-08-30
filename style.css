@@ -167,6 +167,54 @@ header {
   padding: 8px 10px;
   cursor: pointer;
   font-size: 18px;
+}/* =========================
+   ACCIONES DEL HEADER
+========================= */
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* =========================
+   REDES SOCIALES
+========================= */
+
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.socials a {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 50%;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.socials a:hover {
+    background: #147ff5;
+    border-color: #147ff5;
+    transform: translateY(-2px);
 }
 
 /* =====================================================
@@ -890,8 +938,6 @@ footer {
   .sec {
     padding: 60px 0;
   }
-
-
   /* HEADER */
 
   header {
@@ -902,15 +948,40 @@ footer {
     width: calc(100% - 32px);
     min-height: 64px;
     padding: 10px 0;
+
+    display: flex;
+    align-items: center;
     justify-content: space-between;
+  }
+
+  .logo {
+    margin-right: auto;
   }
 
   .logo img {
     width: 150px;
+    height: auto;
   }
 
   .toggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: auto;
+
+    width: 32px;
+    height: 32px;
+
+    padding: 0;
+    flex-shrink: 0;
+
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.7);
+
+    cursor: pointer;
+    font-size: 18px;
   }
 
   .links {
@@ -936,14 +1007,15 @@ footer {
 
   .links.open {
     display: flex;
+    z-index: 50;
   }
 
-  .contact {
+  .nav-actions {
     display: none;
   }
 
-
   /* HERO */
+
 
   .hero {
     width: 100%;
