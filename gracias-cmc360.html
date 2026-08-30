@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensaje enviado | CMC360 Ciberseguridad OT</title>
+
+    <style>
+        :root {
+            --n: #061a33;
+            --b: #2580ee;
+            --bd: #d7e2ef;
+            --light: #eef6ff;
+            --text: #172235;
+            --muted: #526176;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--n);
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 20px;
+        }
+
+        .thank-you {
+            width: 100%;
+            max-width: 760px;
+            background: var(--white);
+            border: 1px solid rgba(255,255,255,.12);
+            box-shadow: 0 24px 70px rgba(0,0,0,.28);
+            text-align: center;
+            padding: 50px 48px 38px;
+        }
+
+        .logo {
+            width: 190px;
+            max-width: 70%;
+            height: auto;
+            margin-bottom: 30px;
+        }
+
+        .check {
+            width: 76px;
+            height: 76px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            background: var(--b);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 43px;
+            font-weight: 700;
+        }
+
+        .eyebrow {
+            color: var(--b);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: var(--n);
+            font-size: clamp(30px, 5vw, 44px);
+            line-height: 1.12;
+            margin-bottom: 18px;
+        }
+
+        .message {
+            max-width: 590px;
+            margin: 0 auto;
+            color: var(--muted);
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .info-box {
+            max-width: 590px;
+            margin: 28px auto 0;
+            padding: 22px 24px;
+            background: var(--light);
+            border: 1px solid var(--bd);
+            text-align: left;
+        }
+
+        .info-box h2 {
+            color: var(--n);
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .info-box p {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .btn {
+            min-height: 48px;
+            padding: 0 25px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            border: 1px solid var(--b);
+            transition: .2s ease;
+        }
+
+        .btn-primary {
+            background: var(--b);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #176acb;
+            border-color: #176acb;
+        }
+
+        .btn-secondary {
+            background: #fff;
+            color: var(--n);
+            border-color: var(--bd);
+        }
+
+        .btn-secondary:hover {
+            color: var(--b);
+            border-color: var(--b);
+        }
+
+        .footer {
+            margin-top: 28px;
+            padding-top: 20px;
+            border-top: 1px solid var(--bd);
+            color: #738299;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .footer strong {
+            color: var(--n);
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 18px 14px;
+            }
+
+            .thank-you {
+                padding: 38px 22px 30px;
+            }
+
+            .logo {
+                margin-bottom: 25px;
+            }
+
+            .check {
+                width: 68px;
+                height: 68px;
+                font-size: 38px;
+                margin-bottom: 21px;
+            }
+
+            .message {
+                font-size: 16px;
+            }
+
+            .info-box {
+                padding: 18px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="thank-you">
+
+        <img
+            src="assets/logo-completo.webp"
+            alt="CMC360 Ciberseguridad OT"
+            class="logo">
+
+        <div class="check" aria-hidden="true">✓</div>
+
+        <div class="eyebrow">CONTACTO RECIBIDO</div>
+
+        <h1>¡Mensaje enviado!</h1>
+
+        <p class="message">
+            Gracias por contactarnos. Hemos recibido correctamente
+            tu solicitud y nuestro equipo revisará la información
+            para responderte a la brevedad.
+        </p>
+
+        <div class="info-box">
+            <h2>¿Qué sigue?</h2>
+            <p>
+                Revisaremos tu consulta y nos pondremos en contacto
+                contigo utilizando los datos que proporcionaste en el formulario.
+            </p>
+        </div>
+
+        <div class="buttons">
+            <a href="index.html" class="btn btn-primary">
+                VOLVER AL INICIO
+            </a>
+
+            <a href="index.html#servicios" class="btn btn-secondary">
+                VER SERVICIOS
+            </a>
+        </div>
+
+        <div class="footer">
+            <p><strong>CMC360 Ciberseguridad OT</strong></p>
+            <p>
+                ¿Necesitas información adicional?
+                Escríbenos a soluciones@dymcyber.com
+            </p>
+        </div>
+
+    </main>
+
+</body>
+</html>
