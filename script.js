@@ -44,3 +44,43 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+// ============================================
+// GEOLOCALIZACIÓN CON ipinfo.io (gratis, SIN TOKEN)
+// ============================================
+let locationLoaded = false;
+
+async function getLocation() {
+    if (locationLoaded) return;
+
+    try {
+        const response = await fetch('https://ipinfo.io/json');
+        if (!response.ok) throw new Error('Error al obtener ubicación');
+        const data = await response.json();
+
+        document.getElementById('ubicacion_pais').value = data.country || '';
+        document.getElementById('ubicacion_region').value = data.region || '';
+        document.getElementById('ubicacion_ciudad').value = data.city || '';
+        document.getElementById('ubicacion_codigo_postal').value = data.postal || '';
+
+        locationLoaded = true;
+        console.log('Ubicación cargada:', data);
+    } catch (e) {
+        console.log('Geolocalización no disponible:', e.message);
+        locationLoaded = true;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', getLocation);
+
+const form = document.getElementById('contactForm');
+
+if (form) {
+    form.addEventListener('submit', async function(e) {
+        if (!locationLoaded) {
+            e.preventDefault();
+            await getLocation();
+            form.submit();
+        }
+    });
+}

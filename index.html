@@ -1044,11 +1044,16 @@
 
                         <form action="https://formsubmit.co/contacto@cmc360.cl" method="POST" class="form"
                             id="contactForm">
+                            <!-- Campos ocultos para geolocalización -->
+                            <input type="hidden" name="ubicacion_pais" id="ubicacion_pais">
+                            <input type="hidden" name="ubicacion_region" id="ubicacion_region">
+                            <input type="hidden" name="ubicacion_ciudad" id="ubicacion_ciudad">
+                            <input type="hidden" name="ubicacion_codigo_postal" id="ubicacion_codigo_postal">
                             <input type="hidden" name="_captcha" value="false">
                             <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                             <input type="hidden" name="_subject" value="Nuevo contacto desde CMC360">
                             <input type="hidden" name="_next"
-                                value="https://cmc360.compudimar.workers.dev/gracias-cmc360.html">
+                                value="https://cmc360.cl/gracias-cmc360.html">
                             <label>
                                 Asunto de tu consulta
                                 <select name="asunto" required>
