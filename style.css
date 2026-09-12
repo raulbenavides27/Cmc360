@@ -180,41 +180,91 @@ header {
 /* =========================
    REDES SOCIALES
 ========================= */
-
+/*social nav*/
 .socials {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .socials a {
-    width: 30px;
-    height: 30px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  color: #fff;
+  background: transparent;
+  border: none;
+  border-radius: 0;
 
-    color: #ffffff;
-    text-decoration: none;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
 
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 700;
+  padding: 0;
 
-    border: 1px solid rgba(255, 255, 255, 0.45);
-    border-radius: 50%;
-
-    transition:
-        background-color 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
+  transition:
+    color .2s ease,
+    transform .2s ease;
 }
 
 .socials a:hover {
-    background: #147ff5;
-    border-color: #147ff5;
-    transform: translateY(-2px);
+  color: var(--b);
+  background: transparent;
+  border: none;
+  transform: translateY(-1px);
+}
+
+.socials svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+/* social contacto */
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-links a {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--b);
+  text-decoration: none;
+
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+
+  border: 1px solid rgba(20, 127, 245, 0.25);
+  border-radius: 50%;
+
+  transition:
+    color .2s ease,
+    background-color .2s ease,
+    border-color .2s ease,
+    transform .2s ease;
+}
+
+.social-links a:hover {
+  color: #fff;
+  background: var(--b);
+  border-color: var(--b);
+  transform: translateY(-2px);
+}
+
+.social-links svg {
+  width: 21px;
+  height: 21px;
 }
 
 /* =====================================================
@@ -233,7 +283,7 @@ header {
       rgba(3,15,31,.72) 42%,
       rgba(3,15,31,.18)
     ),
-    url("assets/hero.png") center / cover no-repeat,
+    url("assets/hero.webp") center / cover no-repeat,
     #071a33;
 }
 
@@ -610,9 +660,16 @@ header {
   margin-top: 42px;
 }
 
-.assessment .ph {
+.assessment-media {
   min-height: 290px;
-  background: #e6e7e9;
+  overflow: hidden;
+}
+
+.assessment-media img {
+  display: block;
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
 }
 
 .checks {
@@ -654,9 +711,9 @@ header {
 }
 
 .cta .secondary {
-  background: transparent;
+  background: var(--b);
   color: #fff;
-  border-color: #fff;
+  border-color: var(--b);
 }
 
 
@@ -678,9 +735,15 @@ header {
   gap: 18px;
 }
 
-.case .ph {
-  background: #e6e7e9;
-  min-height: 115px;
+.case-image {
+  display: block;
+  width: 100%;
+  height: 115px;
+  object-fit: cover;
+}
+
+.wide-image {
+  height: 115px;
 }
 
 .case h3 {
@@ -1028,7 +1091,7 @@ footer {
         rgba(3,15,31,.90) 55%,
         rgba(3,15,31,.55) 100%
       ),
-      url("assets/hero.jpg");
+      url("assets/hero-900.webp");
 
     background-size: cover;
     background-repeat: no-repeat;
@@ -1208,8 +1271,12 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .assessment .ph {
-    display: none;
+  .assessment-media {
+    display: block;
+  }
+
+  .assessment-media img {
+    height: 230px;
   }
 
 
@@ -1223,8 +1290,12 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .case .ph {
-    display: none;
+  .case-image {
+    height: 190px;
+  }
+
+  .wide-image {
+    height: 190px;
   }
 
   .wide {
