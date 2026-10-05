@@ -385,7 +385,7 @@ header {
 
 .imgph {
   min-height: 390px;
-  background: #d7dbe1;
+//  background: #d7dbe1;
   display: grid;
   place-items: center;
   color: var(--b);
