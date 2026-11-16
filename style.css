@@ -1383,3 +1383,273 @@ footer {
   }
 
 }
+
+
+/* =====================================================
+   CMC360 · CAPA VISUAL Y MICROINTERACCIONES
+   Enriquecimiento visual sin alterar la estructura
+===================================================== */
+
+:root {
+  --surface-soft: #f3f7fc;
+  --surface-blue: #edf4fb;
+  --accent-warm: #d7a45a;
+  --shadow-soft: 0 14px 36px rgba(7, 26, 51, .075);
+}
+
+body {
+  background: #fff;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  letter-spacing: .005em;
+}
+
+html {
+  scroll-padding-top: 88px;
+}
+
+section[id] {
+  scroll-margin-top: 88px;
+}
+
+.sec {
+  position: relative;
+  isolation: isolate;
+}
+
+#nosotros,
+#soluciones,
+#casos {
+  background:
+    radial-gradient(ellipse at 8% 12%, rgba(8, 124, 240, .055), transparent 42%),
+    radial-gradient(ellipse at 92% 88%, rgba(215, 164, 90, .045), transparent 36%),
+    linear-gradient(135deg, #f7faff 0%, #eef4fa 52%, #f8fafc 100%);
+  border-top: 1px solid rgba(8, 66, 125, .055);
+  border-bottom: 1px solid rgba(8, 66, 125, .055);
+}
+
+#servicios,
+#compliance,
+#contacto {
+  background: #fff;
+}
+
+#nosotros .about,
+#servicios .service,
+#soluciones .solution-list,
+#compliance .std,
+#casos .case,
+#contacto .card {
+  position: relative;
+}
+
+#servicios .service,
+#compliance .std,
+#casos .case,
+#contacto .card {
+  background: rgba(255, 255, 255, .94);
+  border: 1px solid rgba(13, 55, 99, .10);
+  box-shadow: var(--shadow-soft);
+  border-radius: 12px;
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+
+#servicios .service {
+  padding: 22px 20px;
+}
+
+#servicios .service:hover,
+#compliance .std:hover,
+#casos .case:hover,
+#contacto .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 42px rgba(7, 26, 51, .12);
+  border-color: rgba(8, 124, 240, .28);
+}
+
+#servicios .service h3:after,
+#casos .case h3:after {
+  height: 3px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--b), rgba(215, 164, 90, .72));
+}
+
+#soluciones .solution-list {
+  background: rgba(255,255,255,.92);
+  border-color: rgba(13,55,99,.12);
+  box-shadow: var(--shadow-soft);
+}
+
+#soluciones .sol {
+  transition: background-color .25s ease;
+}
+
+#soluciones .sol:hover {
+  background: #f7faff;
+}
+
+#soluciones .brand img {
+  max-width: 145px;
+  max-height: 68px;
+  object-fit: contain;
+}
+
+#compliance .std {
+  border-radius: 12px;
+}
+
+#compliance .assessment {
+  padding: 28px;
+  border-radius: 14px;
+  background: linear-gradient(120deg, #f1f6fc, #ffffff 70%);
+  border: 1px solid rgba(13,55,99,.09);
+}
+
+#compliance .assessment-media img {
+  border-radius: 10px;
+}
+
+#casos .case {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#casos .case-image {
+  border-radius: 8px;
+}
+
+#contacto .card {
+  border-radius: 12px;
+}
+
+.head h2,
+.about h2,
+.ctop h2,
+.contact-head h2 {
+  letter-spacing: -.025em;
+  color: var(--n);
+}
+
+.ey {
+  letter-spacing: .12em;
+}
+
+.hero h1 {
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+
+.hero p,
+.lead {
+  line-height: 1.75;
+}
+
+.btn,
+.more,
+.links a {
+  transition: color .22s ease, background-color .22s ease, border-color .22s ease, transform .22s ease, box-shadow .22s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 22px rgba(8, 124, 240, .18);
+}
+
+.pillar {
+  transition: color .22s ease, background-color .22s ease;
+}
+
+.pillar:hover {
+  color: #fff;
+  background: rgba(255,255,255,.055);
+}
+
+.cta {
+  border-radius: 12px;
+  background: linear-gradient(115deg, #102e57, #2443a3 72%, #176fc3);
+  box-shadow: 0 16px 36px rgba(7, 26, 51, .16);
+}
+
+input,
+select,
+textarea {
+  border-radius: 7px;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--b);
+  box-shadow: 0 0 0 3px rgba(8,124,240,.12);
+}
+
+:focus-visible {
+  outline: 3px solid rgba(8,124,240,.55);
+  outline-offset: 3px;
+}
+
+/* Aparición progresiva al entrar en pantalla */
+.js-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .72s ease, transform .72s cubic-bezier(.2,.7,.2,1);
+  will-change: opacity, transform;
+}
+
+.js-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js-reveal[data-reveal-delay="1"] { transition-delay: .08s; }
+.js-reveal[data-reveal-delay="2"] { transition-delay: .16s; }
+.js-reveal[data-reveal-delay="3"] { transition-delay: .24s; }
+
+@media (max-width: 760px) {
+  html { scroll-padding-top: 68px; }
+  section[id] { scroll-margin-top: 68px; }
+
+  #nosotros,
+  #soluciones,
+  #casos {
+    background:
+      radial-gradient(ellipse at 12% 8%, rgba(8,124,240,.045), transparent 48%),
+      linear-gradient(180deg, #f5f8fc 0%, #eef4fa 55%, #f7f9fc 100%);
+  }
+
+  #servicios .service {
+    padding: 20px 18px;
+  }
+
+  #compliance .assessment {
+    padding: 18px;
+  }
+
+  #servicios .service:hover,
+  #compliance .std:hover,
+  #casos .case:hover,
+  #contacto .card:hover {
+    transform: none;
+  }
+
+  .js-reveal {
+    transform: translateY(14px);
+    transition-duration: .55s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+  .js-reveal {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+  }
+}
