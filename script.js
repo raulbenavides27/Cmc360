@@ -84,3 +84,53 @@ if (form) {
         }
     });
 }
+
+
+// ============================================
+// APARICIÓN SUAVE DE CONTENIDOS AL DESPLAZARSE
+// ============================================
+document.addEventListener("DOMContentLoaded", function () {
+    const reduceMotion = window.matchMedia &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const revealTargets = [
+        ".about > div",
+        ".statsg .stat",
+        ".service",
+        ".sol",
+        ".ctop > div",
+        ".std",
+        ".assessment > div",
+        ".case",
+        ".contactg > *"
+    ];
+
+    const elements = document.querySelectorAll(revealTargets.join(","));
+
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+        elements.forEach(function (element) {
+            element.classList.add("is-visible");
+        });
+        return;
+    }
+
+    elements.forEach(function (element, index) {
+        element.classList.add("js-reveal");
+        element.dataset.revealDelay = String(index % 4);
+    });
+
+    const observer = new IntersectionObserver(function (entries, currentObserver) {
+        entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            currentObserver.unobserve(entry.target);
+        });
+    }, {
+        threshold: 0.12,
+        rootMargin: "0px 0px -35px 0px"
+    });
+
+    elements.forEach(function (element) {
+        observer.observe(element);
+    });
+});
